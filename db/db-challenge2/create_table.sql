@@ -15,7 +15,7 @@ CREATE TABLE chatrooms(
     id int(11) PRIMARY KEY AUTO_INCREMENT,
     name varchar(100) NOT NULL,
     infomation varchar(1000),
-    is_allow_send_file tinyint(1) DEFAULT 0 NOT NULL,
+    is_denied_send_file tinyint(1) DEFAULT 0 NOT NULL,
     is_chatroom_directchat tinyint(1) DEFAULT 0 NOT NULL,
     created_at datetime NOT NULL,
     modified_at datetime NOT NULL,
