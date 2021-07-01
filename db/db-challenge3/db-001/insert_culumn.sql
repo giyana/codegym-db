@@ -1,8 +1,3 @@
-/* 
-INSERT INTO users(name,email,password,work_phone_number,mobile_phone_number,comment,created_at,modified,is_deleted)
-VALUES();
- */
-
 INSERT INTO users(name,email,password,work_phone_number,comment,created_at,modified,is_deleted)
 VALUES("admin","admin@labot.inc","admin","00-0000-0000","このスペースの管理者です。","2020/04/20 15:47:52","2020/04/20 15:47:52",0);
 
@@ -25,7 +20,7 @@ INSERT INTO users(name,email,password,created_at,modified,is_deleted)
 VALUES("react","react@labot.inc","node","2020/04/23 09:54:32","2020/04/23 09:54:32",0);
 
 INSERT INTO users(name,email,password,mobile_phone_number,created_at,modified,is_deleted)
-VALUES("html5","html@labot.inc,css3","080-5849-5555","2020/04/23 09:55:14","2020/04/23 09:55:14",0);
+VALUES("html5","html@labot.inc","css3","080-5849-5555","2020/04/23 09:55:14","2020/04/23 09:55:14",0);
 
 INSERT INTO users(name,email,password,comment,created_at,modified,is_deleted)
 VALUES("php","php@labot.inc","php7","伝説のphp6","2020/04/24 01:01:06","2020/04/24 01:01:06",0);
