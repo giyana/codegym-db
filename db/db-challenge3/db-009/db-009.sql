@@ -14,4 +14,5 @@ WHERE
     posts.is_deleted = 0
     AND users.is_deleted = 0
 GROUP BY
-    chatroom_id;
+    chatroom_id
+ORDER BY 投稿数 DESC;
