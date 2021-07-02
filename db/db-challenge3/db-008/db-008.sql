@@ -3,11 +3,10 @@
 -- 　・参加日時は年月日のみ表示すること
 -- 　・削除されているユーザー、削除されているチャットルームは表示しないこと
 -- 　・参加日時の昇順で表示"
-
 SELECT
     users.name AS ユーザー名,
     chatrooms.name AS チャットルーム名,
-    joined_at AS 参加日時
+    CAST(joined_at AS date) AS 参加日時
 FROM
     join_histries
     LEFT JOIN users ON join_histries.user_id = users.id
