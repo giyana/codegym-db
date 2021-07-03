@@ -6,15 +6,24 @@
 SELECT
     users.name AS ユーザー名,
     chatrooms.name AS チャットルーム名,
-    MAX(chatrooms.created_at) AS 投稿日時
+    posts.created_at AS 投稿日時
 FROM
     chatrooms
     JOIN users ON chatrooms.post_user_id = users.id
     JOIN posts ON chatrooms.id = posts.chatroom_id
 WHERE
-    posts.is_deleted = 0
-    AND users.is_deleted = 0
-GROUP BY
-    chatrooms.id
+    posts.created_at IN(
+        SELECT
+            MAX(posts.created_at)
+        FROM
+            chatrooms
+            JOIN users ON chatrooms.post_user_id = users.id
+            JOIN posts ON chatrooms.id = posts.chatroom_id
+        WHERE
+            posts.is_deleted = 0
+            AND users.is_deleted = 0
+        GROUP BY
+            chatrooms.id
+    )
 ORDER BY
-    chatrooms.id ASC;
+    chatrooms.id ASC
