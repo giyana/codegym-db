@@ -7,7 +7,7 @@ INSERT INTO
         mobile_phone_number,
         comment,
         created_at,
-        modified,
+        modified_at,
         is_deleted
     )
 VALUES
