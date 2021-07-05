@@ -11,15 +11,15 @@ UPDATE
     chatrooms
 SET
     is_denied_send_file = 0,
-    modified_user_id = 1,
-    modified_at = NOW()
+    modified_at = NOW(),
+    modified_user_id = 1
 WHERE
-    chatrooms.id NOT IN (
+    chatrooms.id NOT IN(
         SELECT
             c.id
         FROM
+            -- #1093エラー避けのためサブクエリ作成
             (
-                -- #1093エラー避けのため内部にサブクエリ作成
                 SELECT
                     *
                 FROM
