@@ -16,6 +16,6 @@ SET
 WHERE
     created_at BETWEEN '2020/4/26 09:00'
     AND '2020/4/26 11:30'
-    AND NOT is_deleted = 1;
+    AND is_deleted = 0;
 
 COMMIT;
